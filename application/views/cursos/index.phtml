@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<h1>Cursos</h1>
+		<p>Escolha um curso</p>
+	</div>
+	
+	<div class="row">
+		
+		<?php print_r($view_cursos);?>
+	
+		<table class="table">
+			<tr>
+				<td>Curso</td>
+				<td>Matricular</td>
+			</tr>
+			<?php foreach ($view_cursos as $curso){?>
+			<tr>
+				<td><?php echo $curso['curso'];?></td>
+				<td><a href="cursos/matricular/<?php echo $curso['id'];?>">Clique aqui</a></td>
+			</tr>
+			<?php } ?>
+			
+		</table>
+		
+	</div>
+</div>
