@@ -10,7 +10,7 @@
 			$this->setAction();
 		}
 		public function setUrl(){
-			$this->url= (isset($_GET['url'])? $_GET['url'] :'dashboad/index');
+			$this->url= (isset($_GET['url'])? $_GET['url'] :'dashboard/index');
 		}
 		public function setParteUrl(){
 			$this->parteUrl = explode('/',$this->url);
@@ -19,11 +19,14 @@
 			$this->controler=$this->parteUrl[0];
 		}
 		public function setAction(){
-			$this->action=$this->parteUrl[1];
+			$this->action = (isset($this->parteUrl[1]) && trim($this->parteUrl[1]) != '' ) ? $this->parteUrl[1] : 'Index';
 		}
 		public function run(){
+			//Adicionar a classe que vamos executar
 			require ('./application/controllers/'. $this->controler .'.php');
+			//Executar o controller
 			$app = new $this->controler();
+			//Executar o método
 			$action= $this->action;
 			$app->$action();
 		}

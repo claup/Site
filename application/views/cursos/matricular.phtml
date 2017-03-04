@@ -6,9 +6,36 @@
 	</div>
 	
 	<div class="row">
+	
+		<div>
+			<p><?=($view_mensagem)?$info_mensagem:'';?></p>
+		</div>
+	
 		<form method="post">
+			
+			<input type="hidden" name="id_curso" value="1" />
+			
 			<label>Nome Aluno</label>
-			<input type="text" name="nome_aluno" />
+			<input type="text" name="nome" />
+			<br/>
+			<label>Telefone</label>
+			<input type="text" name="telefone" />
+			<br/>
+			<label>Endereço</label>
+			<input type="text" name="endereco" />
+			<br/>
+			<label>CPF</label>
+			<input type="text" name="cpf" />
+			<br/>
+			<label>Email</label>
+			<input type="text" name="email" />
+			<br/>
+			<label>Data de Nascimento (31/12/1971)</label>
+			<input type="text" name="datanascimento" />
+			<br/>
+			<label>Responsável</label>
+			<input type="text" name="responsavel" />
+			<br/>
 			<input type="submit" name="salvar" value="Cadastrar" />
 		</form>
 	</div>

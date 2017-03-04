@@ -1,0 +1,20 @@
+
+<div>
+	<p><?=(isset($view_resultado) )? $view_resultado:''; ?></p>
+
+</div>
+
+<form method="post">
+
+	<label>Nome</label>
+	<input type="text" name="nome" />
+	<br/>
+	<label>E-mail</label>
+	<input type="text" name="email" />
+	<br/>
+	<label>Mensagem</label>
+	<textarea name="mensagem"></textarea>
+	<br/>
+	<input type="submit" name="salvar" value="Enviar" />
+	
+</form>

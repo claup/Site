@@ -9,7 +9,11 @@
         public function insert( array $dados) {
             $campos = implode(", ", array_keys($dados));
             $valores = "'".implode("','", array_values($dados))."'";
-            return $this->db->query("INSERT INTO `{$this->_tabela}` ({$campos}) VALUES ({$valores})");
+           
+            $SQL = "INSERT INTO `{$this->_tabela}` ({$campos}) VALUES ({$valores})";
+            $this->db->query($SQL);
+            
+            return $this->db->lastInsertId();
         }
         
         public function select( $where = NULL, $limit = null, $offset = null, $orderby = null) {

@@ -1,5 +1,6 @@
 <?php
-//PADR�O DE PROJETO - FRONT CONTROLLER
+
+session_start();
 
 include ('config.php');
 
